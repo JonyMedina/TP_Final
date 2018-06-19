@@ -35,6 +35,10 @@ public class DestinoDTO implements Serializable {
 	public void setUbicacion(UbicacionDTO ubicacion) {
 		Ubicacion = ubicacion;
 	}
+	public JsonDestino ToDestinoJson() {
+		
+		return new JsonDestino(this.getIdDestino(), this.getNombre());
+	}
  	
  	
  	

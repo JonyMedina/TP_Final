@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.google.gson.Gson;
+
 
 public class OfertaPaqueteDTO implements Serializable {
 	
@@ -117,6 +119,12 @@ public class OfertaPaqueteDTO implements Serializable {
 	}
 	public void setAgencia(AgenciaDTO agencia) {
 		this.agencia = agencia;
+	}
+	public String toJson() {
+		
+		Gson gson = new Gson();
+		JsonOferta mensaje = new JsonOferta(this);
+		return gson.toJson(mensaje);
 	}
 	
 

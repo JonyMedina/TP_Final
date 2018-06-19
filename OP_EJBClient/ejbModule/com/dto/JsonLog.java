@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Calendar;
 
+import com.google.gson.Gson;
+
 public class JsonLog implements Serializable {
 	
 	private String plataformaEnvia;
@@ -14,7 +16,7 @@ public class JsonLog implements Serializable {
 	public JsonLog(String plataformaRecibe, String servicio,
 			String observacion) {
 		super();
-		this.plataformaEnvia= "Oferta Paquete 3";
+		this.plataformaEnvia= "OP";
 		this.plataformaEnvia = plataformaEnvia;
 		this.plataformaRecibe = plataformaRecibe;
 
@@ -49,6 +51,10 @@ public class JsonLog implements Serializable {
 	}
 	public void setObservacion(String observacion) {
 		this.observacion = observacion;
+	}
+	public String ToJson() {
+		Gson gson = new Gson();
+ 		return  gson.toJson(this);
 	}
 	
 	

@@ -3,11 +3,10 @@ package com.dto;
 import java.io.Serializable;
 import java.util.List;
 
+import com.google.gson.Gson;
+
 public class AgenciaDTO implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Integer Id;
 	private String Nombre;
@@ -54,9 +53,11 @@ public class AgenciaDTO implements Serializable {
  		Ofertas = ofertas;
  	}
  	
- 	public JsonAgencia toJason(){
- 		JsonAgencia mensaje = new JsonAgencia("Agencia",Nombre);
- 		return mensaje;
+ 	public String toJson(){
+ 		
+ 		Gson gson = new Gson();
+ 		JsonAgencia mensaje = new JsonAgencia(this.getNombre(),this.getMail());
+ 		return  gson.toJson(mensaje);
  				
  	}
 	public Integer getIdBO() {
@@ -64,6 +65,11 @@ public class AgenciaDTO implements Serializable {
 	}
 	public void setIdBO(Integer idBO) {
 		IdBO = idBO;
+	}
+	public JsonAgenciaenPaquete ToJsonAgenciaenPaquete() {
+		
+		return new JsonAgenciaenPaquete(this.getId(), this.getNombre(), this.getDireccion(), this.getEstado());
+
 	}
  	
  	

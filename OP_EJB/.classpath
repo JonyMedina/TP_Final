@@ -13,5 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="ejbModule/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="C:/ArchivosJM/soft_utils/jackson-core-2.3.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

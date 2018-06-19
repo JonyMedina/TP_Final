@@ -30,6 +30,9 @@ public class MensajeRest implements MensajeRestRemote, MensajeRestLocal {
     
     
 	public JsonAgencia2 envioAgenciaJSON(String agencia) throws IOException{
+		System.out.println(agencia);
+		
+/*		
 		URL url = new URL("http://192.168.1.92:8080/TPO_BO_WEB/rest/ServiciosBO/EnviarSolicitud");
 		HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 		urlConnection.setDoOutput(true);
@@ -63,38 +66,42 @@ public class MensajeRest implements MensajeRestRemote, MensajeRestLocal {
  		JsonAgencia2 agencia2 = gson.fromJson(response.toString(), JsonAgencia2.class);
  		System.out.println("Id: "+agencia2.getId());
  		return agencia2;
+ */
+		return null;
 	}    
 
 	public void envioLog (String log) throws IOException{
-		URL url = new URL("http://192.168.1.92:8080/TPO_BO_WEB/rest/ServiciosBO/RegistrarLog");
-		HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-		urlConnection.setDoOutput(true);
-		urlConnection.setRequestMethod("POST");
-	  	urlConnection.setRequestProperty("Content-Type","application/json");
-	  	
-	 // Send post request
-	  	urlConnection.setDoOutput(true);
-	 	DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
-	 	wr.writeBytes(log);
-	 	wr.flush();
-	 	wr.close();
-
-	 	int responseCode = urlConnection.getResponseCode();
-	 	System.out.println("\nSending 'POST' request to URL : " + url);
-	 	System.out.println("Post parameters : " + log);
-	 	System.out.println("Response Code : " + responseCode);
-
-	 	BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-	 	String inputLine;
-	 	StringBuffer response = new StringBuffer();
-
-	 	while((inputLine = in.readLine()) != null) {
-	 		response.append(inputLine);
-	 	}
-		in.close();
-
-		//print result
- 		System.out.println(response.toString());
+		
+		System.out.println(log);
+//		URL url = new URL("http://192.168.1.92:8080/TPO_BO_WEB/rest/ServiciosBO/RegistrarLog");
+//		HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+//		urlConnection.setDoOutput(true);
+//		urlConnection.setRequestMethod("POST");
+//	  	urlConnection.setRequestProperty("Content-Type","application/json");
+//	  	
+//	 // Send post request
+//	  	urlConnection.setDoOutput(true);
+//	 	DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
+//	 	wr.writeBytes(log);
+//	 	wr.flush();
+//	 	wr.close();
+//
+//	 	int responseCode = urlConnection.getResponseCode();
+//	 	System.out.println("\nSending 'POST' request to URL : " + url);
+//	 	System.out.println("Post parameters : " + log);
+//	 	System.out.println("Response Code : " + responseCode);
+//
+//	 	BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+//	 	String inputLine;
+//	 	StringBuffer response = new StringBuffer();
+//
+//	 	while((inputLine = in.readLine()) != null) {
+//	 		response.append(inputLine);
+//	 	}
+//		in.close();
+//
+//		//print result
+// 		System.out.println(response.toString());
 
 	}
 

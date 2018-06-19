@@ -1,0 +1,10 @@
+package com.dto;
+
+public class JsonAgenciaenPaquete {
+
+	private int id;
+	private String nombre;
+	private String direccion;
+	private String estado; //INACTIVO, ACTIVO
+
+}

@@ -30,8 +30,4 @@ public class JsonAgencia implements Serializable {
 	public void setDetalle(String detalle) {
 		this.detalle = detalle;
 	}
-	
-	
-
-
 }

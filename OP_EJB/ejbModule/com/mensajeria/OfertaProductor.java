@@ -29,8 +29,11 @@ public class OfertaProductor implements OfertaProductorRemote, OfertaProductorLo
 	JMSContext context;
 
 	public void sendMessage(String messageText) {
-		TextMessage message = context.createTextMessage("Hola, hay alguien ahí?");
-		context.createProducer().send(testQueue, message);
+		
+		System.out.println(messageText);
+		
+//		TextMessage message = context.createTextMessage("Hola, hay alguien ahí?");
+//		context.createProducer().send(testQueue, message);
 	}
 
 }
