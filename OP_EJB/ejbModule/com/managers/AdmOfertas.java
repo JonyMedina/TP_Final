@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.persistence.*;
 import com.dto.*;
 import com.entities.*;
+import com.rest.MensajeRest;
 
 
 @Stateless
@@ -256,5 +257,7 @@ public class AdmOfertas implements AdmOfertasRemote, AdmOfertasLocal {
 		}
 		return null;
 	}
+
+
 
 }

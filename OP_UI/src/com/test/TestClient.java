@@ -62,8 +62,7 @@ public class TestClient {
 		mostrarMedios(mbr.recuperarMedios());
 
 		// PRUEBA RECUPERAR SERVICIOS
-		// --> este me falta terminar porque es la llamada al webservice de
-		// backoffice
+		mostrarServicios(mbr.recuperarServicios());
 
 		// PRUEBA RECUPERAR DESTINOS
 		mostrarDestinos(mbr.recuperarDestinos());
@@ -79,6 +78,17 @@ public class TestClient {
 	}
 
 	// METODOS TESTING
+
+	private static void mostrarServicios(List<TipoServicioDTO> lstTipoServicios) {
+
+
+		
+		for (TipoServicioDTO tipoServicioDto : lstTipoServicios) {
+			System.out.println("Servicio: " + tipoServicioDto.getId() + " - " + tipoServicioDto.getNombre());
+		}
+		System.out.println("---------------------------------------");
+		
+	}
 
 	private static void mostrarPaquetes(ArrayList<OfertaPaqueteDTO> lstPaqueteDto) {
 		System.out.println("-----------PRUEBA MOSTRAR PAQUETES-------------------");

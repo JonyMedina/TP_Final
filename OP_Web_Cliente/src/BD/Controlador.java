@@ -11,9 +11,6 @@ import com.dto.*;
 
 public class Controlador {
 	
-	
-//	@EJB
-//	private OfertaPaqueteFacadeRemote ofertaFacade;
 	OPFacadeRemote ofertaFacade = null;
 	
 	private static Controlador instancia;
@@ -185,7 +182,7 @@ public class Controlador {
 		return ofertaFacade.recuperarMedios();
 	}
 
-	public List<ServicioDTO> recuperarServicios() {
+	public List<TipoServicioDTO> recuperarServicios() {
 		// TODO Auto-generated method stub
 		return ofertaFacade.recuperarServicios();
 	}

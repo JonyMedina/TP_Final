@@ -16,4 +16,5 @@ public interface AdmOfertasLocal {
 	List<MedioDePagoDTO> recuperarMedios();
 	List<DestinoDTO> recuperarDestinos();
 	ArrayList<OfertaPaqueteDTO> recuperarPaquetes();
+	
 }

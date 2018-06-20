@@ -49,7 +49,7 @@ public class AltaPaquete extends BaseController {
 		
 		List<AgenciaDTO> agencias;
 		List<MedioDePagoDTO> medios;
-		List<ServicioDTO> servicios;
+		List<TipoServicioDTO> servicios;
 		List<DestinoDTO> destinos;
 		
 		try {
@@ -89,7 +89,7 @@ public class AltaPaquete extends BaseController {
 			int cupo = Integer.parseInt(request.getParameter("cupo"));
 			String agencia = (String) request.getParameter("CAgencia");
 			String destinoD = (String) request.getParameter("CDestino");
-	 		String direccionFoto = UploadFile(request, response);
+	 		String direccionFoto = "fakeDirectory";//UploadFile(request, response);
 	//		String direccionFoto = "http://foto.com";
 			String[] servicio = (String[]) request.getParameterValues("cmbServicio");
 			String[] medio = (String[]) request.getParameterValues("cmbMedioDePago");

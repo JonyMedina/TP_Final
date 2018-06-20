@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.controlador.OPFacadeRemote"/>
+<fullyQualifiedTypeName name="java.util.Hashtable"/>
+<fullyQualifiedTypeName name="javax.naming.Context"/>
+<fullyQualifiedTypeName name="com.google.gson.Gson"/>
+<fullyQualifiedTypeName name="com.dto.DestinoDTO"/>
+<fullyQualifiedTypeName name="com.dto.JsonDestino"/>
+<fullyQualifiedTypeName name="com.dto.JsonAgenciaenPaquete"/>
+<fullyQualifiedTypeName name="com.dto.MedioDePagoDTO"/>
+<fullyQualifiedTypeName name="com.dto.JsonOferta"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.rest.MensajeRest"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.dto.JsonServicio"/>
+<fullyQualifiedTypeName name="com.dto.JsonTipoServicio"/>
+<fullyQualifiedTypeName name="com.dto.ServicioDTO"/>
+<fullyQualifiedTypeName name="com.dto.TipoServicioDTO"/>
+</qualifiedTypeNameHistroy>

@@ -18,5 +18,6 @@ public interface AdmOfertasRemote {
 	List<DestinoDTO> recuperarDestinos();
 	ArrayList<OfertaPaqueteDTO> recuperarPaquetes();
 	
+	
 
 }

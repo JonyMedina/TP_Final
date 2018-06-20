@@ -6,6 +6,8 @@ import java.util.List;
 
 public class JsonTipo implements Serializable {
 	
+	
+	//esta no deberia ya ser necesaria...
 	private long id;
 	private String nombre;
 	private List<JsonServicio> servicios = new ArrayList<JsonServicio>();

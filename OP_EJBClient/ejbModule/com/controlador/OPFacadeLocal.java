@@ -24,7 +24,7 @@ public interface OPFacadeLocal {
 	public void altaServicios(List<ServicioDTO> servicios);
 	public void altaDestinos(List<DestinoDTO> destinos);
 	public List<MedioDePagoDTO> recuperarMedios();
-	public List<ServicioDTO> recuperarServicios();
+	public List<TipoServicioDTO> recuperarServicios();
 	public List<DestinoDTO> recuperarDestinos();	
 
 }

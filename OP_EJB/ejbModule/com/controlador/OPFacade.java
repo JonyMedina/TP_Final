@@ -53,7 +53,7 @@ public class OPFacade implements OPFacadeRemote, OPFacadeLocal {
 
 			controladorRest.envioAgenciaJSON(agencia.toJson());
 
-			String messageLog = new JsonLog("BackOficce", "Alta Agencia", "PRUEBA JONATHAN").ToJson();
+			String messageLog = new JsonLog("BackOficce", "Alta Agencia", agencia.getNombre()).ToJson();
 			controladorRest.envioLog(messageLog);
 
 		} catch (IOException e) {
@@ -75,7 +75,7 @@ public class OPFacade implements OPFacadeRemote, OPFacadeLocal {
 		ofertaProductor.sendMessage(ofertaDto.toJson());
 
 		try {
-			controladorRest.envioLog(new JsonLog("PruebaJONa", "Alta Oferta", "OK").ToJson());
+			controladorRest.envioLog(new JsonLog("BackOficce", "Alta Paquete", ofertaDto.getNombre()).ToJson());
 
 		} catch (IOException e) {
 
@@ -110,8 +110,26 @@ public class OPFacade implements OPFacadeRemote, OPFacadeLocal {
 	}
 
 	@Override
-	public List<ServicioDTO> recuperarServicios() {
-		// TODO Auto-generated method stub
+	@SuppressWarnings("unused")
+	public List<TipoServicioDTO> recuperarServicios() {
+		
+	try {		
+			List<TipoServicioDTO> lstReturn = new ArrayList<TipoServicioDTO>();
+		
+			List<JsonTipoServicio> lstJsonServicio = controladorRest.recuperarServicios();
+			
+			for (JsonTipoServicio jsonTipoServicio : lstJsonServicio) {
+				
+				lstReturn.add(jsonTipoServicio.ToTipoServicioDTO());
+			}
+			
+			return lstReturn;
+			
+			
+		} catch (IOException e) {
+			//TOD0: aca capaz conviene que en caso de que falle, devuelva los datos harcodeados.
+			e.printStackTrace();
+		}
 		return null;
 	}
 
