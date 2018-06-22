@@ -5,6 +5,16 @@ import java.io.Serializable;
 
 public class UbicacionDTO implements Serializable {
 	
+	public UbicacionDTO() {
+		super();
+	
+	}
+	
+	public UbicacionDTO(Double logitud, Double latitud) {
+		super();
+		Logitud = logitud;
+		Latitud = latitud;
+	}
 	/**
 	 * 
 	 */

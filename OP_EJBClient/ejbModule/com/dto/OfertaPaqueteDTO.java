@@ -25,8 +25,8 @@ public class OfertaPaqueteDTO implements Serializable {
 	private List<ServicioDTO> Servicios;
 	private List<MedioDePagoDTO> MediosDePagos;
 	private String Estado;
-	private Integer Cupo;
-	private Integer CantidadPersonas;
+	private int Cupo;
+	private int CantidadPersonas;
 	private AgenciaDTO agencia;
 	
 	public Integer getIdPaquete() {
@@ -96,16 +96,16 @@ public class OfertaPaqueteDTO implements Serializable {
 	public void setEstado(String estado) {
 		Estado = estado;
 	}
-	public Integer getCupo() {
+	public int getCupo() {
 		return Cupo;
 	}
-	public void setCupo(Integer cupo) {
+	public void setCupo(int cupo) {
 		Cupo = cupo;
 	}
-	public Integer getCantidadPersonas() {
+	public int getCantidadPersonas() {
 		return CantidadPersonas;
 	}
-	public void setCantidadPersonas(Integer cantidadPersonas) {
+	public void setCantidadPersonas(int cantidadPersonas) {
 		CantidadPersonas = cantidadPersonas;
 	}
 	public String getFoto() {
@@ -123,7 +123,7 @@ public class OfertaPaqueteDTO implements Serializable {
 	public String toJson() {
 		
 		Gson gson = new Gson();
-		JsonOferta mensaje = new JsonOferta(this);
+		OfertaPaqueteMensaje mensaje = new OfertaPaqueteMensaje(this);
 		return gson.toJson(mensaje);
 	}
 	

@@ -1,0 +1,108 @@
+package com.dto;
+
+import java.io.Serializable;
+import com.google.gson.Gson;
+
+public class OPLog implements Serializable {
+	private static final long serialVersionUID = 1L;
+	/*	
+	"idLog":”",      //Nulo
+	"modulo":1,	//usar la tabla de abajo para cada acción
+	"accion":1,	//usar la tabla de abajo para cada acción
+	"fecha": "2018-06-19"	
+	 */
+	private int idLog;
+	private int modulo;
+	private int accion;
+	private String fecha;
+	
+	public OPLog(int accion) {
+		super();
+		this.idLog = "";
+		this.modulo = 2; //2-Oferta Paquete
+		this.accion = accion;  //3: Nueva agencia / 4: Nueva oferta
+		this.fecha = ObtenerFecha();
+		
+		String s;
+		Format formatter;
+		Date date = new Date();
+
+		// 2012-12-01
+		formatter = new SimpleDateFormat("yyyy-MM-dd");
+		s = formatter.format(date);
+		System.out.println(s);
+	}
+
+
+
+
+	private String ObtenerFecha() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+	public String ToJson() {
+		Gson gson = new Gson();
+		return gson.toJson(this);
+	}
+
+
+
+
+	public int getIdLog() {
+		return idLog;
+	}
+
+
+
+
+	public void setIdLog(int idLog) {
+		this.idLog = idLog;
+	}
+
+
+
+
+	public int getModulo() {
+		return modulo;
+	}
+
+
+
+
+	public void setModulo(int modulo) {
+		this.modulo = modulo;
+	}
+
+
+
+
+	public int getAccion() {
+		return accion;
+	}
+
+
+
+
+	public void setAccion(int accion) {
+		this.accion = accion;
+	}
+
+
+
+
+	public String getFecha() {
+		return fecha;
+	}
+
+
+
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+}

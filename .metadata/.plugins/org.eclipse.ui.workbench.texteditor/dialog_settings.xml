@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="SERVI" key="selection"/>
+		<item value="session_servicios" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="servi"/>
+			<item value="session_servicios"/>
 			<item value="servicios"/>
-			<item value="MensajeRest"/>
-			<item value="List&lt;ServicioDTO&gt; recuperarServicios();"/>
-			<item value="recuperarServicios"/>
-			<item value="fecha"/>
-			<item value="setFoto_paquete"/>
-			<item value="&#x09;&#x09;&#x09;JsonLog log = new JsonLog(&quot;BackOficce 1&quot;, &quot;Alta Agencia&quot;, &quot;OK&quot;);"/>
+			<item value="recu"/>
+			<item value="serv"/>
+			<item value="serci"/>
+			<item value="servicio"/>
+			<item value="recuper"/>
+			<item value="altaser"/>
 		</list>
 		<list key="replacehistory">
 		</list>

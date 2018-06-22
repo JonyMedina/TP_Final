@@ -3,7 +3,7 @@ package com.dto;
 import java.io.Serializable;
 import java.util.List;
 
-import com.google.gson.Gson;
+
 
 public class AgenciaDTO implements Serializable {
 	
@@ -55,9 +55,8 @@ public class AgenciaDTO implements Serializable {
  	
  	public String toJson(){
  		
- 		Gson gson = new Gson();
- 		JsonAgencia mensaje = new JsonAgencia(this.getNombre(),this.getMail());
- 		return  gson.toJson(mensaje);
+ 		String mensaje = new JsonAgencia(this).ToJson();
+ 		return  mensaje;
  				
  	}
 	public Integer getIdBO() {

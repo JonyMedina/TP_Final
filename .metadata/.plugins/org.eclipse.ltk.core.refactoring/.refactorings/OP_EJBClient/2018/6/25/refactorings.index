@@ -1,2 +1,4 @@
 1529471751751	Rename type 'JsonTipoServ'
 1529471855858	Encapsulate field 'servicios'
+1529547714915	Rename compilation unit 'JsonLog.java'
+1529588071441	Encapsulate field 'idCiudadDestino'

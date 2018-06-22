@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html" pageEncoding="UTF-8"
 	import="com.dto.*,java.util.*"%>
 <% 
-List<AgenciaDTO> agencias = (List<AgenciaDTO>) request.getAttribute("agencias");
+List<AgenciaDTO> agencias = request.getAttribute("agencias")!=null? (List<AgenciaDTO>) request.getAttribute("agencias"): new ArrayList<AgenciaDTO>();
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,19 +10,16 @@ List<AgenciaDTO> agencias = (List<AgenciaDTO>) request.getAttribute("agencias");
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Oferta Paquetes</title>
+<title>Oferta Paquetes - Grupo 11</title>
 
-<!-- Bootstrap core CSS -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
 <link href="signin.css" rel="stylesheet">
 </head>
 
 <body>
 	<div class="container">
 		<div class="col-md-12">
-			<h1>Lista de Agencias</h1>
+			<h1>Agencias</h1>
 			<%
 				if (request.getAttribute("error") != null) {
 			%>
@@ -80,15 +77,15 @@ List<AgenciaDTO> agencias = (List<AgenciaDTO>) request.getAttribute("agencias");
 			</table>
 			
 			<br>
-			
+			<form action="/OP_Web_Cliente/Agencia" method="POST" class="col-md-4 col-md-push-3">
+				<button name="accion" value="Volver" class="btn btn-lg btn-primary btn-block" type="submit"> Nueva agencia</button>
+			</form>			
 			
 			<form action="/OP_Web_Cliente/Volver" method="POST" class="col-md-4 col-md-push-3">
 				<button name="accion" value="Volver" class="btn btn-lg btn-primary btn-block" type="submit"> Volver</button>
 			</form>
 			
-			<form action="/OP_Web_Cliente/Agencia" method="POST" class="col-md-4 col-md-push-3">
-				<button name="accion" value="Volver" class="btn btn-lg btn-primary btn-block" type="submit"> Nueva agencia</button>
-			</form>
+
 
 		</div>
 	</div>

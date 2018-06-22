@@ -1,0 +1,23 @@
+package com.dto;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Calendar;
+
+import com.google.gson.Gson;
+
+public class JsonLog implements Serializable {
+	
+
+	
+
+	
+	public String ToJson() {
+		Gson gson = new Gson();
+ 		return  gson.toJson(this);
+	}
+	
+	
+	
+
+}

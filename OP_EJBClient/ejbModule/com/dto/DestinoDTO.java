@@ -12,11 +12,18 @@ public class DestinoDTO implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Integer IdDestino;
+	private int idCiudadDestino;
 	private String Nombre;
 	
 	
  	private UbicacionDTO Ubicacion;
  	
+	public int getIdCiudadDestino() {
+		return idCiudadDestino;
+	}
+	public void setIdCiudadDestino(int idCiudadDestino) {
+		this.idCiudadDestino = idCiudadDestino;
+	}
 	public Integer getIdDestino() {
 		return IdDestino;
 	}

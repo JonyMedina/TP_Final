@@ -1,0 +1,16 @@
+package com.dto;
+
+import java.io.Serializable;
+
+
+import com.google.gson.Gson;
+
+public class OPLog implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	public String ToJson() {
+		Gson gson = new Gson();
+ 		return  gson.toJson(this);
+	}
+
+}

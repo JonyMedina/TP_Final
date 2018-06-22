@@ -26,7 +26,7 @@ public class JsonOferta implements Serializable {
 	
 	public JsonOferta(OfertaPaqueteDTO ofertaPaqueteDTO) {
 		
-		this.setId(ofertaPaqueteDTO.getIdPaquete()!=null?ofertaPaqueteDTO.getIdPaquete():0);
+		this.setId(ofertaPaqueteDTO.getIdPaquete()==null?0:ofertaPaqueteDTO.getIdPaquete());
 		this.setNombre(ofertaPaqueteDTO.getNombre());
 		this.setCiudadDestino(ofertaPaqueteDTO.getDestino().ToDestinoJson());
 		this.setCupo(ofertaPaqueteDTO.getCupo());

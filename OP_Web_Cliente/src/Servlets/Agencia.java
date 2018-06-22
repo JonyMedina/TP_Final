@@ -14,40 +14,30 @@ import com.dto.AgenciaDTO;
 
 import BD.Controlador;
 
-/**
- * Servlet implementation class Agencia
- */
+
 @WebServlet("/Agencia")
 public class Agencia extends BaseController {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public Agencia() {
         super();
-        // TODO Auto-generated constructor stub
+       
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<AgenciaDTO> agencias;
 		try {
 			agencias = Controlador.getInstancia().recuperarAgencias();
 			request.setAttribute("agencias", agencias);
 			Dispatch("agencias.jsp", request, response);
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {
+			
+			request.setAttribute("error", e.getMessage());
 			e.printStackTrace();
 		}
-		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Dispatch("altaAgencia.jsp",request,response);
 	}

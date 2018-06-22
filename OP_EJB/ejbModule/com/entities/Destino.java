@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.dto.DestinoDTO;
+import com.dto.UbicacionDTO;
+
 @Entity
 @Table(name="Destinos")
 public class Destino implements Serializable {
@@ -21,6 +24,7 @@ public class Destino implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer IdDestino;
+	private int idCiudadDestino;
 	private String Nombre;
 	@Embedded 
  	private Ubicacion Ubicacion;
@@ -42,6 +46,21 @@ public class Destino implements Serializable {
 	}
 	public void setUbicacion(Ubicacion ubicacion) {
 		Ubicacion = ubicacion;
+	}
+	public int getIdCiudadDestino() {
+		return idCiudadDestino;
+	}
+	public void setIdCiudadDestino(int idCiudadDestino) {
+		this.idCiudadDestino = idCiudadDestino;
+	}
+	public DestinoDTO ToDto() {
+		DestinoDTO destinoReturn = new DestinoDTO();
+		destinoReturn.setIdDestino(this.getIdDestino());
+		destinoReturn.setIdCiudadDestino(this.getIdCiudadDestino());
+		destinoReturn.setNombre(this.getNombre());
+		destinoReturn.setUbicacion(new UbicacionDTO(this.getUbicacion().getLatitud(),this.getUbicacion().getLogitud()));
+		
+		return destinoReturn;
 	}
  	
  	

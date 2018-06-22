@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="UTF-8">
-<title>Oferta Paquetes</title>
+<title>Oferta Paquetes - Grupo 11</title>
 
 <!-- Bootstrap core CSS -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@
 
 <body>
 	<div class="container">
-		<h1>Alta de Agencia</h1>
+		<h1>Alta de Agencia - Grupo 11</h1>
 		<br />
 		<br />
 		

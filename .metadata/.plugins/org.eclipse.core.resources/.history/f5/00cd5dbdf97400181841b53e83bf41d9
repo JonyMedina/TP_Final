@@ -1,0 +1,47 @@
+package com.dto;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Calendar;
+
+import com.google.gson.Gson;
+
+public class JsonLog implements Serializable {
+	
+
+	
+
+	public String getPlataformaEnvia() {
+		return plataformaEnvia;
+	}
+	public void setPlataformaEnvia(String plataformaEnvia) {
+		this.plataformaEnvia = plataformaEnvia;
+	}
+	public String getPlataformaRecibe() {
+		return plataformaRecibe;
+	}
+	public void setPlataformaRecibe(String plataformaRecibe) {
+		this.plataformaRecibe = plataformaRecibe;
+	}
+
+	public String getServicio() {
+		return servicio;
+	}
+	public void setServicio(String servicio) {
+		this.servicio = servicio;
+	}
+	public String getObservacion() {
+		return observacion;
+	}
+	public void setObservacion(String observacion) {
+		this.observacion = observacion;
+	}
+	public String ToJson() {
+		Gson gson = new Gson();
+ 		return  gson.toJson(this);
+	}
+	
+	
+	
+
+}
