@@ -29,7 +29,7 @@ public class OfertaPaqueteMensaje {
 		this.setCiudadDestino(new CiudadMensaje(ofertaPaqueteDTO.getDestino().getIdCiudadDestino()));
 		this.setCupo(ofertaPaqueteDTO.getCupo());
 		this.setCantPersonas(ofertaPaqueteDTO.getCantidadPersonas());
-		this.setAgencia(new AgenciaMensaje(ofertaPaqueteDTO.getAgencia().getId(), 
+		this.setAgencia(new AgenciaMensaje(ofertaPaqueteDTO.getAgencia().getIdBO(), 
 										   ofertaPaqueteDTO.getAgencia().getNombre(),
 										   ofertaPaqueteDTO.getAgencia().getDireccion(),
 										   ofertaPaqueteDTO.getAgencia().getEstado()));

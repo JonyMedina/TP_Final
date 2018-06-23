@@ -13,10 +13,11 @@ public interface AdmAgenciasRemote {
 
 	public void altaMedios(MedioDePagoDTO medioDTO);
 
-	public void altaAgencia(AgenciaDTO agencia);
-
+	public Integer altaAgencia(AgenciaDTO agencia);
+	public void actualizarAgencia(AgenciaDTO agencia);
+	
 	public ArrayList<AgenciaDTO> recuperarAgencias();
-
+	public AgenciaDTO recuperarAgencia(int clave);
 	
 	
 	

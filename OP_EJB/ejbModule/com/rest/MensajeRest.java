@@ -29,7 +29,7 @@ public class MensajeRest implements MensajeRestRemote, MensajeRestLocal {
     }
     
     
-	public void envioAgenciaJSON(String agencia) throws IOException{
+	public ResponseServicioAltaAgenciaDTO envioAgenciaJSON(String agencia) throws IOException{
 	
 		//URL url = new URL("http://192.168.1.92:8080/rest/agencias");
 		
@@ -61,13 +61,11 @@ public class MensajeRest implements MensajeRestRemote, MensajeRestLocal {
 		in.close();
 
 		//print result
- 		//System.out.println(response.toString());
-// 		Gson gson = new Gson();
-// 		JsonAgencia2 agencia2 = gson.fromJson(response.toString(), JsonAgencia2.class);
+		System.out.println(response.toString());
+ 		Gson gson = new Gson();
+ 		ResponseServicioAltaAgenciaDTO responseBackoffice = gson.fromJson(response.toString(), ResponseServicioAltaAgenciaDTO.class);
 // 		System.out.println("Id: "+agencia2.getId());
-// 		return agencia2;
- 
-	
+ 		return responseBackoffice; 
 	}    
 
 	public void envioLog (String log) throws IOException{

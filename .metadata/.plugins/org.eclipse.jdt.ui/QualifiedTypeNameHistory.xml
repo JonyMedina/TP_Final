@@ -22,7 +22,6 @@
 <fullyQualifiedTypeName name="javax.jms.TextMessage"/>
 <fullyQualifiedTypeName name="com.dto.OfertaPaqueteMensaje"/>
 <fullyQualifiedTypeName name="com.dto.AgenciaMensaje"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.dto.DestinoDTO"/>
 <fullyQualifiedTypeName name="com.dto.UbicacionDTO"/>
@@ -34,4 +33,7 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="com.dto.TipoServicioDTO"/>
 <fullyQualifiedTypeName name="com.dto.MedioDePagoDTO"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.entities.Agencia"/>
+<fullyQualifiedTypeName name="com.dto.AgenciaDTO"/>
 </qualifiedTypeNameHistroy>

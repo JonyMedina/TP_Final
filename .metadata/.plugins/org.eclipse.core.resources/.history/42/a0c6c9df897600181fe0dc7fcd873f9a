@@ -47,14 +47,11 @@ public class OPFacade implements OPFacadeRemote, OPFacadeLocal {
 	@Override
 	public void altaAgencia(AgenciaDTO agencia) {
 
-		admAgencia.altaAgencia(agencia);
-
 		try {
-
+			Integer idAgenciaCreada = admAgencia.altaAgencia(agencia);
+			agencia.setId(idAgenciaCreada);
 			controladorRest.envioAgenciaJSON(agencia.toJson());
-
-			String messageLog = new JsonLog("BackOficce", "Alta Agencia", agencia.getNombre()).ToJson();
-			controladorRest.envioLog(messageLog);
+			controladorRest.envioLog(new OPLog(3).ToJson());//3-nueva agencia
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -69,24 +66,32 @@ public class OPFacade implements OPFacadeRemote, OPFacadeLocal {
 
 	@Override
 	public void altaPaquete(OfertaPaqueteDTO ofertaDto) {
+		try 
+		{
+			admOfertas.altaPaquete(ofertaDto);
+			ofertaDto.setDestino(admOfertas.recuperarDestinoDTO(ofertaDto.getDestino().getIdDestino())); //leo de la base para recuperar el idCiudad y todo. 
 
-		admOfertas.altaPaquete(ofertaDto);
-
-		ofertaProductor.sendMessage(ofertaDto.toJson());
-
-		try {
-			controladorRest.envioLog(new JsonLog("BackOficce", "Alta Paquete", "OK").ToJson());
+			
+			
+			ofertaProductor.sendMessage(ofertaDto.toJson());
+			
+			System.out.println(ofertaDto.toJson());
+			
+			controladorRest.envioLog(new OPLog(4).ToJson());//4- Nueva oferta
 
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override
 	public ArrayList<OfertaPaqueteDTO> recuperarPaquetes() {
-		return admOfertas.recuperarPaquetes();
+		try {
+			return admOfertas.recuperarPaquetes();
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 	@Override
@@ -110,27 +115,23 @@ public class OPFacade implements OPFacadeRemote, OPFacadeLocal {
 	}
 
 	@Override
-	@SuppressWarnings("unused")
 	public List<TipoServicioDTO> recuperarServicios() {
 		
-	try {		
-			List<TipoServicioDTO> lstReturn = new ArrayList<TipoServicioDTO>();
-		
+	List<TipoServicioDTO> lstReturn = new ArrayList<TipoServicioDTO>();
+	try {				
 			List<JsonTipoServicio> lstJsonServicio = controladorRest.recuperarServicios();
-			
 			for (JsonTipoServicio jsonTipoServicio : lstJsonServicio) {
-				
 				lstReturn.add(jsonTipoServicio.ToTipoServicioDTO());
 			}
-			
 			return lstReturn;
-			
-			
 		} catch (IOException e) {
-			//TOD0: aca capaz conviene que en caso de que falle, devuelva los datos harcodeados.
 			e.printStackTrace();
+			TipoServicioDTO tipoError = new TipoServicioDTO();
+			tipoError.setId(-1);
+			tipoError.setNombre("Error llamada");
+			tipoError.setServicios(new ArrayList<ServicioDTO>());
+			return lstReturn;
 		}
-		return null;
 	}
 
 	@Override

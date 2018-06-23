@@ -17,4 +17,5 @@ public interface AdmOfertasLocal {
 	List<DestinoDTO> recuperarDestinos();
 	ArrayList<OfertaPaqueteDTO> recuperarPaquetes();
 	DestinoDTO recuperarDestinoDTO(int idDestino);
+	//void actualizarAgencia(AgenciaDTO agencia);
 }

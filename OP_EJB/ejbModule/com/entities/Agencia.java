@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.dto.AgenciaDTO;
+
 @Entity
 @Table(name="Agencias")
 public class Agencia implements Serializable {
@@ -78,6 +80,17 @@ public class Agencia implements Serializable {
 	}
 	public void setIdBO(Integer idBO) {
 		IdBO = idBO;
+	}
+	public AgenciaDTO ToDTO() {
+		AgenciaDTO agenciaReturn = new AgenciaDTO();
+		agenciaReturn.setDireccion(this.getDireccion());
+		agenciaReturn.setEstado(this.getEstado());
+		agenciaReturn.setId(this.getId());
+		agenciaReturn.setIdBO(this.getIdBO());
+		agenciaReturn.setMail(this.getMail());
+		agenciaReturn.setNombre(this.getNombre());
+		
+		return agenciaReturn;
 	}
 	
 	
