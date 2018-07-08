@@ -1,0 +1,22 @@
+package com.managers;
+
+import javax.ejb.Local;
+
+import com.dto.CategoriaDTO;
+import com.dto.ProductoDTO;
+import com.entities.Categoria;
+import com.entities.Producto;
+
+@Local
+public interface AdmProductosLocal {
+
+    public void altaCategoria(CategoriaDTO categoriaDto);
+    
+    public void altaProducto(ProductoDTO productoDto);
+
+	private Categoria ObtenerCategoriaPorID(Integer id);
+	
+	
+	
+	
+}

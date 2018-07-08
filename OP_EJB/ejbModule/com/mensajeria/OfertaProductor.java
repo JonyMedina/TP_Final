@@ -16,10 +16,10 @@ public class OfertaProductor implements OfertaProductorRemote, OfertaProductorLo
 
 	}
 
-	@Resource(lookup = "java:/queue/ofertaPaquete")
+	@Resource(lookup = "java:/myJmsTest/MyQueue")
 	Destination destination;
 
-	@Resource(lookup = "java:/queue/MyConnectionFactory")
+	@Resource(lookup = "java:/myJmsTest/MyConnectionFactory1")
 	ConnectionFactory connectionFactory;
 
 	public void sendMessage(String messageText) {
@@ -27,6 +27,7 @@ public class OfertaProductor implements OfertaProductorRemote, OfertaProductorLo
 		System.out.println(messageText);
 
 		try {
+			
 			QueueConnection connection = (QueueConnection) connectionFactory.createConnection("integracion",
 					"integracion");
 
@@ -35,6 +36,12 @@ public class OfertaProductor implements OfertaProductorRemote, OfertaProductorLo
 			TextMessage message = session.createTextMessage(messageText);
 			producer.send(message);
 
+			System.out.println("-------------------------------------------");
+			System.out.println("\tMensaje enviado a la cola: ");
+			System.out.println(message);
+			System.out.println("-------------------------------------------");
+			
+			
 			producer.close();
 			session.close();
 			connection.close();

@@ -1,0 +1,28 @@
+package com.dto;
+
+import java.io.Serializable;
+
+public class CategoriaDTO implements Serializable {
+
+	private Integer id;
+	private String descripcion;
+	
+	
+	public CategoriaDTO(String descripcion) {
+		// TODO Auto-generated constructor stub
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	
+}

@@ -1,22 +1,22 @@
 package com.dto;
 
 public class AgenciaMensaje {
-		private int id;
+		private String id;
 		private String nombre;
 		private String direccion;
-		private String estado; // INACTIVO, ACTIVO
+		//private String estado; // INACTIVO, ACTIVO
 		
-		public AgenciaMensaje(int id, String nombre, String direccion, String estado) {
+		public AgenciaMensaje(String id, String nombre, String direccion, String estado) {
 			this.setId(id);
 			this.setNombre(nombre);
 			this.setDireccion(direccion);
-			this.setEstado(estado);
+			//this.setEstado(estado);
 			
 		}
-		public int getId() {
+		public String getId() {
 			return id;
 		}
-		public void setId(int id) {
+		public void setId(String id) {
 			this.id = id;
 		}
 		public String getNombre() {
@@ -31,11 +31,11 @@ public class AgenciaMensaje {
 		public void setDireccion(String direccion) {
 			this.direccion = direccion;
 		}
-		public String getEstado() {
-			return estado;
-		}
-		public void setEstado(String estado) {
-			this.estado = estado;
-		}
+//		public String getEstado() {
+//			return estado;
+//		}
+//		public void setEstado(String estado) {
+//			this.estado = estado;
+//		}
 		
 }

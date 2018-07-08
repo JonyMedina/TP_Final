@@ -51,12 +51,12 @@ public class OPFacade implements OPFacadeRemote, OPFacadeLocal {
 			Integer idAgenciaCreada = admAgencia.altaAgencia(agencia);
 			agencia.setId(idAgenciaCreada);
 			
-			ResponseServicioAltaAgenciaDTO responseBackOffice = controladorRest.envioAgenciaJSON(agencia.toJson());
-			agencia.setIdBO(responseBackOffice.getIdAgenciaGeneradoBackOffice()); 
+			String responseBackOffice = controladorRest.envioAgenciaJSON(agencia.toJson());
+			agencia.setIdBO(responseBackOffice); 
 			
 			admAgencia.actualizarAgencia(agencia);
 			
-			 controladorRest.envioLog(new OPLog(3).ToJson());//3-nueva agencia
+			 controladorRest.envioLog(new OPLog(7).ToJson());//7-nueva agencia
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -83,7 +83,7 @@ public class OPFacade implements OPFacadeRemote, OPFacadeLocal {
 			
 			System.out.println(ofertaDto.toJson());
 			
-			controladorRest.envioLog(new OPLog(4).ToJson());//4- Nueva oferta
+			controladorRest.envioLog(new OPLog(8).ToJson());//8- Nueva oferta paquete
 
 		} catch (IOException e) {
 

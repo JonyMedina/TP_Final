@@ -15,23 +15,24 @@ public class OPLog implements Serializable {
 	"accion":1,	//usar la tabla de abajo para cada acción
 	"fecha": "2018-06-19"	
 	 */
-	private String idLog;
+	//private String idLog;
 	private int modulo;
 	private int accion;
-	private String fecha;
+	private long fecha;
 	
 	public OPLog(int accion) {
 		
-		this.idLog = "";
+		//this.idLog = "";
 		this.modulo = 2; //2-Oferta Paquete
 		this.accion = accion;  //3: Nueva agencia / 4: Nueva oferta
 		this.fecha = ObtenerFecha();
 	}
 
-	private String ObtenerFecha() {
+	private long ObtenerFecha() {
 		Date date = new Date();
-		Format formatter = new SimpleDateFormat("yyyy-MM-dd");
-		return formatter.format(date);
+//		Format formatter = new SimpleDateFormat("yyyy-MM-dd");
+//		return formatter.format(date);
+		return date.getTime();
 	}
 
 	public String ToJson() {
@@ -42,16 +43,16 @@ public class OPLog implements Serializable {
 
 
 
-	public String getIdLog() {
-		return idLog;
-	}
-
-
-
-
-	public void setIdLog(String idLog) {
-		this.idLog = idLog;
-	}
+//	public String getIdLog() {
+//		return idLog;
+//	}
+//
+//
+//
+//
+//	public void setIdLog(String idLog) {
+//		this.idLog = idLog;
+//	}
 
 
 
@@ -84,14 +85,14 @@ public class OPLog implements Serializable {
 
 
 
-	public String getFecha() {
+	public long getFecha() {
 		return fecha;
 	}
 
 
 
 
-	public void setFecha(String fecha) {
+	public void setFecha(long fecha) {
 		this.fecha = fecha;
 	}
 

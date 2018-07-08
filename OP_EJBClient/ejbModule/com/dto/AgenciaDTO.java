@@ -14,7 +14,7 @@ public class AgenciaDTO implements Serializable {
 	private String Estado;
 	private String Mail;
 	private List<OfertaPaqueteDTO> Ofertas;
-	private Integer IdBO;
+	private String IdBO;
 	
 	public Integer getId() {
 		return Id;
@@ -59,10 +59,10 @@ public class AgenciaDTO implements Serializable {
  		return  mensaje;
  				
  	}
-	public Integer getIdBO() {
+	public String getIdBO() {
 		return IdBO;
 	}
-	public void setIdBO(Integer idBO) {
+	public void setIdBO(String idBO) {
 		IdBO = idBO;
 	}
 	public JsonAgenciaenPaquete ToJsonAgenciaenPaquete() {

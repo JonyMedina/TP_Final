@@ -2,13 +2,15 @@ package com.dto;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
 public class OfertaPaqueteMensaje {
 	private int id;
 	private String nombre;
-	private CiudadMensaje ciudadDestino;
+	//private CiudadMensaje ciudadDestino;
 	private int cupo;
 	private int cantPersonas;
 	private AgenciaMensaje agencia;
@@ -21,12 +23,14 @@ public class OfertaPaqueteMensaje {
 	private String politicas;
 	private String servicios;
 	private String mediosDePago;
+	private int ciudadDestino;
 	
 	public OfertaPaqueteMensaje(OfertaPaqueteDTO ofertaPaqueteDTO) {
 	
 		this.setId(ofertaPaqueteDTO.getIdPaquete()==null?0:ofertaPaqueteDTO.getIdPaquete());
 		this.setNombre(ofertaPaqueteDTO.getNombre());
-		this.setCiudadDestino(new CiudadMensaje(ofertaPaqueteDTO.getDestino().getIdCiudadDestino()));
+		//this.setCiudadDestino(new CiudadMensaje(ofertaPaqueteDTO.getDestino().getIdCiudadDestino()));
+		this.ciudadDestino = ofertaPaqueteDTO.getDestino().getIdCiudadDestino();
 		this.setCupo(ofertaPaqueteDTO.getCupo());
 		this.setCantPersonas(ofertaPaqueteDTO.getCantidadPersonas());
 		this.setAgencia(new AgenciaMensaje(ofertaPaqueteDTO.getAgencia().getIdBO(), 
@@ -72,8 +76,10 @@ public class OfertaPaqueteMensaje {
 	private String ObtenerFecha(Date fecha) {// // Ej: 2007-04-05T12:30-02:00
 		//Date date = new Date();
 		//Format formatter = new SimpleDateFormat("yyyy-MM-dd");
-		Format formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-		return formatter.format(fecha);
+//		Format formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+//		return formatter.format(fecha);
+		
+		return DateTimeFormatter.ISO_OFFSET_DATE_TIME.withZone(ZoneId.systemDefault()).format(fecha.toInstant());
 	}
 	
 	
@@ -90,12 +96,12 @@ public class OfertaPaqueteMensaje {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public CiudadMensaje getCiudadDestino() {
-		return ciudadDestino;
-	}
-	public void setCiudadDestino(CiudadMensaje ciudadDestino) {
-		this.ciudadDestino = ciudadDestino;
-	}
+//	public CiudadMensaje getCiudadDestino() {
+//		return ciudadDestino;
+//	}
+//	public void setCiudadDestino(CiudadMensaje ciudadDestino) {
+//		this.ciudadDestino = ciudadDestino;
+//	}
 	public int getCupo() {
 		return cupo;
 	}

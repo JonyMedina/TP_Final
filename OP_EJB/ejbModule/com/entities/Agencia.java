@@ -37,7 +37,7 @@ public class Agencia implements Serializable {
 	@JoinColumn(name="agencia")
 	private List<OfertaPaquete> Ofertas;
 	
-	private Integer IdBO;
+	private String IdBO;
 	
 	public Integer getId() {
 		return Id;
@@ -75,10 +75,10 @@ public class Agencia implements Serializable {
  	public void setOfertas(List<OfertaPaquete> ofertas) {
  		Ofertas = ofertas;
  	}
-	public Integer getIdBO() {
+	public String getIdBO() {
 		return IdBO;
 	}
-	public void setIdBO(Integer idBO) {
+	public void setIdBO(String idBO) {
 		IdBO = idBO;
 	}
 	public AgenciaDTO ToDTO() {

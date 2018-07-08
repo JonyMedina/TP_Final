@@ -39,7 +39,7 @@ public class OfertaPaquete implements Serializable {
 	private Float PrecioXPersona;
 	private String PoliticaCancelacion;
 	
-	 @Column(columnDefinition="varchar(max)")
+	 @Column(length=10000000)
  	private String Foto;
 	
 	private String Descripcion;

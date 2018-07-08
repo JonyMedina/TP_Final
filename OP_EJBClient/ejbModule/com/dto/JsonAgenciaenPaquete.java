@@ -7,7 +7,7 @@ public class JsonAgenciaenPaquete {
 		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
-		this.estado = estado;
+		//this.estado = estado;
 	}
 	public int getId() {
 		return id;
@@ -27,15 +27,15 @@ public class JsonAgenciaenPaquete {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public String getEstado() {
-		return estado;
-	}
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
+//	public String getEstado() {
+//		return estado;
+//	}
+//	public void setEstado(String estado) {
+//		this.estado = estado;
+//	}
 	private int id;
 	private String nombre;
 	private String direccion;
-	private String estado; //INACTIVO, ACTIVO
+	//private String estado; //INACTIVO, ACTIVO
 
 }

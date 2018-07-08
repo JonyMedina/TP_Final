@@ -1,0 +1,13 @@
+package com.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+
+
+@Entity
+@Table(name="Categorias")
+public class Categoria {
+
+}

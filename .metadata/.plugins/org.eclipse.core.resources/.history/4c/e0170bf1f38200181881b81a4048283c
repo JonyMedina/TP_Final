@@ -1,0 +1,14 @@
+package com.dto;
+
+import java.io.Serializable;
+
+
+public class ProductoDTO implements Serializable{
+
+	private Integer id;
+	private String descripcion;
+
+	private String Foto;
+	private float precioVenta;
+	
+}
